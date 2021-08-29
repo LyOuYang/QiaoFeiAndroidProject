@@ -9,7 +9,7 @@
     android:orientation="vertical">
 
     <Button
-       android:id="@+id/button8"
+       android:id="@+id/buttonpic"
         android:layout_width="164dp"
         android:layout_height="64dp"
         android:text="picture"

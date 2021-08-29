@@ -17,7 +17,7 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        Button button = findViewById(R.id.button8);
+        Button button = findViewById(R.id.buttonpic);
         view = findViewById(R.id.image);
         button.setOnClickListener((b)->{
             Intent image = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
