@@ -10,7 +10,7 @@ import android.provider.MediaStore;
 import android.widget.Button;
 import android.widget.ImageView;
 
-public class MainActivity2 extends AppCompatActivity {
+public class MainActivity3 extends AppCompatActivity {
 
     ImageView view;
     @Override
@@ -34,4 +34,3 @@ public class MainActivity2 extends AppCompatActivity {
         }
     }
 }
-
