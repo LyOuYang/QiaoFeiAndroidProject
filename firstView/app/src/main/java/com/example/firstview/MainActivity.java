@@ -23,14 +23,15 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, MainActivity2.class);
                 startActivity(intent);
 
+            }
+        });
+
         Button button1 = findViewById(R.id.button9);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, MainActivity3.class);
                 startActivity(intent);
-            }
-        });
             }
         });
 
