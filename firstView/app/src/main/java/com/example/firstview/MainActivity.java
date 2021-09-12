@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         storeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, SelectPicture.class);
+                Intent intent = new Intent(MainActivity.this, SelectPictureActivity.class);
                 startActivity(intent);
 
             }
@@ -36,6 +36,12 @@ public class MainActivity extends AppCompatActivity {
         Button permissionButton = findViewById(R.id.permission_button);
         permissionButton.setOnClickListener((v) -> {
             Intent intent = new Intent(MainActivity.this, PermissionActivity.class);
+            startActivity(intent);
+        });
+
+        Button baiduButton = findViewById(R.id.weather_button);
+        baiduButton.setOnClickListener((v) -> {
+            Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
             startActivity(intent);
         });
     }
