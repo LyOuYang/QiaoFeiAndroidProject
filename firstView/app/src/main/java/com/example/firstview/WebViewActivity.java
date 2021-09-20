@@ -1,33 +1,29 @@
 package com.example.firstview;
 
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.TextView;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.JSON;
 
-import domain.Weather;
+import domain.baidu.Weather;
 import utils.HttpsUtils;
 
 public class WebViewActivity extends AppCompatActivity {
-    TextView locationTextView;
-    Button locationButton;
-    TextView TempTextView;
+    EditText shengEditText;
+    EditText shiEditText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.web_view_layout);
-        locationTextView = findViewById(R.id.location_view);
-        locationButton = findViewById(R.id.location_button);
-        TempTextView = findViewById(R.id.temp_view);
-        locationButton.setOnClickListener((view -> {
-            String location = locationTextView.getText().toString();
-            String url = "https://devapi.qweather.com/v7/weather/now?location=" + location + "&key=91c31619980e46018902aaf185acc2cc";
-            String weather = HttpsUtils.sendGetHttpsRequest(url);
-            Weather weatherObject = (Weather) JSONObject.parse(weather);
-            TempTextView.setText("度");
-        }));
+        shengEditText = findViewById(R.id.sheng_edit_text);
+        shiEditText = findViewById(R.id.shi_edit_text);
+        String url = "https://geoapi.qweather.com/v2/city/lookup?location=" + shiEditText.getText() + "&adm="+ shiEditText.getText() +"&key=91c31619980e46018902aaf185acc2cc";
+        String json = HttpsUtils.sendGetHttpsRequest(url);
+        // json ---> 对象
+        Weather weather = JSON.parseObject(json, Weather.class);
+        String s = weather.getNow().getTemp();
     }
 }
