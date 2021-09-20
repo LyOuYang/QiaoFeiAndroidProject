@@ -57,7 +57,7 @@ public class WebViewActivity extends AppCompatActivity {
 
         Runnable r1 = () -> {
             // 网络请求必须走子线程
-            String localUrl = "https://geoapi.qweather.com/v2/city/lookup?location=" + shiEditText.getText() + "&adm="+ shiEditText.getText() +"&key=91c31619980e46018902aaf185acc2cc";
+            String localUrl = "https://geoapi.qweather.com/v2/city/lookup?location=" + shiEditText.getText() + "&adm="+ shengEditText.getText() +"&key=91c31619980e46018902aaf185acc2cc";
             String localJson = HttpsUtils.sendGetHttpsRequest(localUrl);
             LocalDomain location = JSON.parseObject(localJson, LocalDomain.class);
             String locationId = location.getLocation().get(0).getId();
