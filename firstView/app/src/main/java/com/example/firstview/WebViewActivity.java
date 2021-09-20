@@ -21,13 +21,13 @@ public class WebViewActivity extends AppCompatActivity {
         setContentView(R.layout.web_view_layout);
         locationTextView = findViewById(R.id.location_view);
         locationButton = findViewById(R.id.location_button);
-        TempTextView.findViewById(R.id.temp_view);
+        TempTextView = findViewById(R.id.temp_view);
         locationButton.setOnClickListener((view -> {
             String location = locationTextView.getText().toString();
             String url = "https://devapi.qweather.com/v7/weather/now?location=" + location + "&key=91c31619980e46018902aaf185acc2cc";
             String weather = HttpsUtils.sendGetHttpsRequest(url);
             Weather weatherObject = (Weather) JSONObject.parse(weather);
-            TempTextView.setText(weatherObject.getNow().getTemp() + "度");
+            TempTextView.setText("度");
         }));
     }
 }

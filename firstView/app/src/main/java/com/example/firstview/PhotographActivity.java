@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SelectPictureActivity extends AppCompatActivity {
+public class PhotographActivity extends AppCompatActivity {
     ImageView view;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

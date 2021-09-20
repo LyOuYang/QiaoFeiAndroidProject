@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         storeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, SelectPictureActivity.class);
+                Intent intent = new Intent(MainActivity.this, PhotographActivity.class);
                 startActivity(intent);
 
             }
